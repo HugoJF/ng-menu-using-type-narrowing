@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Divider} from "../menu/menu.component";
 
 @Component({
   selector: 'app-menu-divider',
