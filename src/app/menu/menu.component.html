@@ -9,5 +9,10 @@
       [title]="content.title"
       [link]="content.link"
     ></app-menu-item>
+    <app-menu-group
+      *ngIf="group(content)"
+      [title]="content.title"
+      [items]="content.items"
+    ></app-menu-group>
   </ng-container>
 </ul>

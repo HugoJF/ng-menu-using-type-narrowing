@@ -11,7 +11,13 @@ export type Divider = {
   text: string,
 }
 
-export type MenuContent = Item | Divider;
+export type Group = {
+  type: 'group',
+  title: string,
+  items: Item[],
+}
+
+export type MenuContent = Item | Divider | Group;
 
 @Component({
   selector: 'app-menu',
@@ -46,6 +52,23 @@ export class MenuComponent implements OnInit {
       type: 'item',
       title: 'Itch.io',
       link: 'https://itch.io/',
+    }, {
+      type: 'divider',
+      text: 'Auth',
+    }, {
+      type: 'group',
+      title: 'User',
+      items: [
+        {
+          type: "item",
+          link: '/profile',
+          title: 'Profile',
+        }, {
+          type: "item",
+          link: '/logout',
+          title: 'Logout',
+        },
+      ],
     }
   ];
 
@@ -61,5 +84,9 @@ export class MenuComponent implements OnInit {
 
   divider(content: MenuContent): content is Divider {
     return content.type === 'divider';
+  }
+
+  group(content: MenuContent): content is Group {
+    return content.type === 'group';
   }
 }
