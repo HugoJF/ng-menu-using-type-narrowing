@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 export type Item = {
   type: 'item',
   title: string,
+  link: string,
 }
 
 export type Divider = {
@@ -18,28 +19,35 @@ export type MenuContent = Item | Divider;
 })
 export class MenuComponent implements OnInit {
 
-  menu: MenuContent[] = [{
-    type: 'divider',
-    text: 'Voice',
-  }, {
-    type: 'item',
-    title: 'Discord'
-  }, {
-    type: 'item',
-    title: 'Mattermost',
-  }, {
-    type: 'divider',
-    text: 'Gaming'
-  }, {
-    type: 'item',
-    title: 'Steam',
-  }, {
-    type: 'item',
-    title: 'Origin',
-  }, {
-    type: 'item',
-    title: 'Itch.io',
-  }];
+  menu: MenuContent[] = [
+    {
+      type: 'divider',
+      text: 'Voice',
+    }, {
+      type: 'item',
+      title: 'Discord',
+      link: 'https://discord.com/',
+    }, {
+      type: 'item',
+      title: 'Mattermost',
+      link: 'https://mattermost.com/',
+    }, {
+      type: 'divider',
+      text: 'Gaming'
+    }, {
+      type: 'item',
+      title: 'Steam',
+      link: 'https://store.steampowered.com/',
+    }, {
+      type: 'item',
+      title: 'Origin',
+      link: 'https://www.origin.com/',
+    }, {
+      type: 'item',
+      title: 'Itch.io',
+      link: 'https://itch.io/',
+    }
+  ];
 
   constructor() {
   }

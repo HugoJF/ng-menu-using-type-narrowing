@@ -7,6 +7,7 @@ import {Item} from "../menu/menu.component";
 })
 export class MenuItemComponent implements OnInit {
   @Input() title!: string;
+  @Input() link!: string;
 
   constructor() {
   }

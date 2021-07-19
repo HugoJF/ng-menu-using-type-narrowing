@@ -1,6 +1,13 @@
 <ul>
   <ng-container *ngFor="let content of menu">
-    <app-menu-divider *ngIf="divider(content)" [text]="content.text"></app-menu-divider>
-    <app-menu-item *ngIf="item(content)" [title]="content.title"></app-menu-item>
+    <app-menu-divider
+      *ngIf="divider(content)"
+      [text]="content.text"
+    ></app-menu-divider>
+    <app-menu-item
+      *ngIf="item(content)"
+      [title]="content.title"
+      [link]="content.link"
+    ></app-menu-item>
   </ng-container>
 </ul>
